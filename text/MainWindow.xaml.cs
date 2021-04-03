@@ -61,7 +61,8 @@ namespace MPT_Text_Editor
             Environment.Exit(0);
         }
 
-        private void Collapse_Click(object sender, RoutedEventArgs e) => WindowState = WindowState.Minimized; // Свернуть окно
+        private void Collapse_Click(object sender, RoutedEventArgs e) =>
+            WindowState = WindowState.Minimized; // Свернуть окно
 
         private void btnMail_Click(object sender, RoutedEventArgs e)
         {

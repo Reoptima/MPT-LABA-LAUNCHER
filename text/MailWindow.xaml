@@ -4,8 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:text"
-mc:Ignorable="d"
-        Title="MainWindow" 
+        mc:Ignorable="d"
+        Title="MainWindow"
         Height="500" Width="900"
         WindowStyle="None"
         ResizeMode="NoResize"
@@ -14,20 +14,20 @@ mc:Ignorable="d"
         Closed="MainWindow_OnClosed">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition />
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid Background="#0F0F2D" Grid.ColumnSpan="2"
               MouseDown="Grid_MouseDown"
               Panel.ZIndex="2" Margin="0,0,0,463" Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
             </Grid.ColumnDefinitions>
 
 
@@ -42,12 +42,12 @@ mc:Ignorable="d"
                     Click="MenuExit_Click">
                 <Button.Style>
                     <Style TargetType="Button">
-                        <Setter Property="Background" Value="#FFA600"/>
-                        <Setter Property="Cursor" Value="Hand"/>
-                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="Background" Value="#FFA600" />
+                        <Setter Property="Cursor" Value="Hand" />
+                        <Setter Property="Foreground" Value="White" />
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#FE6584"/>
+                                <Setter Property="Background" Value="#FE6584" />
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -58,7 +58,7 @@ mc:Ignorable="d"
                                 CornerRadius="12"
                                 Background="{TemplateBinding Background}">
                             <ContentPresenter VerticalAlignment="Center"
-                                              HorizontalAlignment="Center"/>
+                                              HorizontalAlignment="Center" />
                         </Border>
                     </ControlTemplate>
                 </Button.Template>
@@ -74,12 +74,12 @@ mc:Ignorable="d"
                     Click="exit_Click">
                 <Button.Style>
                     <Style TargetType="Button">
-                        <Setter Property="Background" Value="#FE6584"/>
-                        <Setter Property="Cursor" Value="Hand"/>
-                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="Background" Value="#FE6584" />
+                        <Setter Property="Cursor" Value="Hand" />
+                        <Setter Property="Foreground" Value="White" />
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#FFDA4664"/>
+                                <Setter Property="Background" Value="#FFDA4664" />
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -90,7 +90,7 @@ mc:Ignorable="d"
                                 CornerRadius="12"
                                 Background="{TemplateBinding Background}">
                             <ContentPresenter VerticalAlignment="Center"
-                                              HorizontalAlignment="Center"/>
+                                              HorizontalAlignment="Center" />
                         </Border>
                     </ControlTemplate>
                 </Button.Template>
@@ -107,12 +107,12 @@ mc:Ignorable="d"
                     ToolTip="Свернуть приложение">
                 <Button.Style>
                     <Style TargetType="Button">
-                        <Setter Property="Background" Value="#3DDDC2"/>
-                        <Setter Property="Cursor" Value="Hand"/>
-                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="Background" Value="#3DDDC2" />
+                        <Setter Property="Cursor" Value="Hand" />
+                        <Setter Property="Foreground" Value="White" />
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#FF41B4A0"/>
+                                <Setter Property="Background" Value="#FF41B4A0" />
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -123,63 +123,76 @@ mc:Ignorable="d"
                                 CornerRadius="12"
                                 Background="{TemplateBinding Background}">
                             <ContentPresenter VerticalAlignment="Center"
-                                              HorizontalAlignment="Center"/>
+                                              HorizontalAlignment="Center" />
                         </Border>
                     </ControlTemplate>
                 </Button.Template>
             </Button>
         </Grid>
-        <Grid  Name="EditMailMenu" HorizontalAlignment="Left" Height="463" VerticalAlignment="Top" Width="900" Visibility="Collapsed" IsEnabled="False" Margin="0,37,0,0" Grid.ColumnSpan="2">
+        <Grid Name="EditMailMenu" HorizontalAlignment="Left" Height="463" VerticalAlignment="Top" Width="900"
+              Visibility="Collapsed" IsEnabled="False" Margin="0,37,0,0" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="21*"/>
-                <ColumnDefinition Width="4*"/>
-                <ColumnDefinition Width="275*"/>
+                <ColumnDefinition Width="21*" />
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="275*" />
             </Grid.ColumnDefinitions>
             <DockPanel Margin="51,97,151,83" Grid.Column="2">
                 <ToolBar DockPanel.Dock="Top">
                     <Separator />
-                    <ToggleButton Command="EditingCommands.ToggleBold" Name="btnBold" Content="B" FontWeight="Bold">
-                    </ToggleButton>
-                    <ToggleButton Command="EditingCommands.ToggleItalic" Name="btnItalic" Content="I" FontStyle="Italic">
-                    </ToggleButton>
-                    <ToggleButton Command="EditingCommands.ToggleUnderline" Name="btnUnderline" Content="U">
-                    </ToggleButton>
+                    <ToggleButton Command="EditingCommands.ToggleBold" Name="btnBold" Content="B" FontWeight="Bold" />
+                    <ToggleButton Command="EditingCommands.ToggleItalic" Name="btnItalic" Content="I"
+                                  FontStyle="Italic" />
+                    <ToggleButton Command="EditingCommands.ToggleUnderline" Name="btnUnderline" Content="U" />
                     <Separator />
-                    <ComboBox Name="cmbFontFamily" Width="150" IsEnabled="False" SelectionChanged="cmbFontFamily_SelectionChanged" />
-                    <ComboBox Name="cmbFontSize" Width="50" IsEditable="True" TextBoxBase.TextChanged="cmbFontSize_TextChanged" />
+                    <ComboBox Name="cmbFontFamily" Width="150" IsEnabled="False"
+                              SelectionChanged="cmbFontFamily_SelectionChanged" />
+                    <ComboBox Name="cmbFontSize" Width="50" IsEditable="True"
+                              TextBoxBase.TextChanged="cmbFontSize_TextChanged" />
                     <ComboBox Name="alignment" Width="100" IsEnabled="False" SelectionChanged="Alignment_TextChanged" />
                 </ToolBar>
-                <RichTextBox Name="rtbEditor" LostFocus="RtbEditor_OnLostFocus" GotFocus="RtbEditor_OnGotFocus" SelectionChanged="rtbEditor_SelectionChanged" />
+                <RichTextBox Name="rtbEditor" LostFocus="RtbEditor_OnLostFocus" GotFocus="RtbEditor_OnGotFocus"
+                             SelectionChanged="rtbEditor_SelectionChanged" />
             </DockPanel>
 
-            <TextBlock Text="Недавние" FontSize="18" Grid.Column="2" Margin="685.8,73,16,372" Foreground="White" TextAlignment="Center" FontFamily="Russo one"/>
-            <TextBlock Text="Рассылка" FontSize="18" Grid.Column="2" Margin="685.8,240,10,200" Foreground="White" TextAlignment="Center" FontFamily="Russo one"/>
-            <TextBox Name="toMail" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="208,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="413" Grid.Column="2"/>
-            <TextBox Name="whomMail" KeyUp="WhomMail_OnKeyUp" HorizontalAlignment="Left" Height="23" Margin="208,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="413" Grid.Column="2"/>
-            <TextBox Name="Titleline" KeyUp="WhomMail_OnKeyUp" HorizontalAlignment="Left" Height="23" Margin="207.8,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="221" Grid.Column="2"/>
+            <TextBlock Text="Недавние" FontSize="18" Grid.Column="2" Margin="685.8,73,16,372" Foreground="White"
+                       TextAlignment="Center" FontFamily="Russo one" />
+            <TextBlock Text="Рассылка" FontSize="18" Grid.Column="2" Margin="685.8,240,10,200" Foreground="White"
+                       TextAlignment="Center" FontFamily="Russo one" />
+            <TextBox Name="toMail" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="208,10,0,0"
+                     TextWrapping="Wrap" VerticalAlignment="Top" Width="413" Grid.Column="2" />
+            <TextBox Name="whomMail" KeyUp="WhomMail_OnKeyUp" HorizontalAlignment="Left" Height="23"
+                     Margin="208,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="413" Grid.Column="2" />
+            <TextBox Name="Titleline" KeyUp="WhomMail_OnKeyUp" HorizontalAlignment="Left" Height="23"
+                     Margin="207.8,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="221" Grid.Column="2" />
 
-            <ListView Name="fileList" AllowDrop="True" SelectionChanged="fileList_choiceElement" Drop="FileDrop" HorizontalAlignment="Left" Height="240" Margin="10,108,0,0" VerticalAlignment="Top" Width="111" Opacity="0.5" Grid.ColumnSpan="3"/>
-            <ListView Name="whomMailListLast" SelectionChanged="whomMailListLast_choiceElement" HorizontalAlignment="Left" Height="135" Margin="689.8,96,0,0" VerticalAlignment="Top" Width="119" Opacity="0.5" Grid.Column="2"/>
-            <ListView Name="whomMailList" SelectionChanged="whomMailList_choiceElement" HorizontalAlignment="Left" Height="135" Margin="689.8,262,0,0" VerticalAlignment="Top" Width="119" Opacity="0.5" Grid.Column="2"/>
+            <ListView Name="fileList" AllowDrop="True" SelectionChanged="fileList_choiceElement" Drop="FileDrop"
+                      HorizontalAlignment="Left" Height="240" Margin="10,108,0,0" VerticalAlignment="Top" Width="111"
+                      Opacity="0.5" Grid.ColumnSpan="3" />
+            <ListView Name="whomMailListLast" SelectionChanged="whomMailListLast_choiceElement"
+                      HorizontalAlignment="Left" Height="135" Margin="689.8,96,0,0" VerticalAlignment="Top" Width="119"
+                      Opacity="0.5" Grid.Column="2" />
+            <ListView Name="whomMailList" SelectionChanged="whomMailList_choiceElement" HorizontalAlignment="Left"
+                      Height="135" Margin="689.8,262,0,0" VerticalAlignment="Top" Width="119" Opacity="0.5"
+                      Grid.Column="2" />
 
-            <Button Content="Отправить" 
-                    Name="SendButton" 
-                    Click="Send_Click" 
-                    HorizontalAlignment="Left" 
-                    Margin="563,397,0,0" 
-                    VerticalAlignment="Top" 
-                    Width="111" Height="34" 
+            <Button Content="Отправить"
+                    Name="SendButton"
+                    Click="Send_Click"
+                    HorizontalAlignment="Left"
+                    Margin="563,397,0,0"
+                    VerticalAlignment="Top"
+                    Width="111" Height="34"
                     Grid.Column="2"
                     FontFamily="Russo one">
                 <Button.Style>
                     <Style TargetType="Button">
-                        <Setter Property="Background" Value="#bf7c00"/>
-                        <Setter Property="Cursor" Value="Hand"/>
-                        <Setter Property="Foreground" Value="LightGray"/>
+                        <Setter Property="Background" Value="#bf7c00" />
+                        <Setter Property="Cursor" Value="Hand" />
+                        <Setter Property="Foreground" Value="LightGray" />
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#FE6584"/>
-                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Background" Value="#FE6584" />
+                                <Setter Property="Foreground" Value="White" />
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -190,28 +203,28 @@ mc:Ignorable="d"
                                 CornerRadius="12"
                                 Background="{TemplateBinding Background}">
                             <ContentPresenter VerticalAlignment="Center"
-                                              HorizontalAlignment="Center"/>
+                                              HorizontalAlignment="Center" />
                         </Border>
                     </ControlTemplate>
                 </Button.Template>
             </Button>
             <Button Content="Сохранить"
-                    Click="create_draftVersionMail_Click" 
-                    HorizontalAlignment="Left" 
-                    Margin="50.8,403,0,0" 
-                    VerticalAlignment="Top" 
-                    Width="128" Height="22" 
+                    Click="create_draftVersionMail_Click"
+                    HorizontalAlignment="Left"
+                    Margin="50.8,403,0,0"
+                    VerticalAlignment="Top"
+                    Width="128" Height="22"
                     Grid.Column="2"
                     FontFamily="Russo one">
                 <Button.Style>
                     <Style TargetType="Button">
-                        <Setter Property="Background" Value="#bf7c00"/>
-                        <Setter Property="Cursor" Value="Hand"/>
-                        <Setter Property="Foreground" Value="LightGray"/>
+                        <Setter Property="Background" Value="#bf7c00" />
+                        <Setter Property="Cursor" Value="Hand" />
+                        <Setter Property="Foreground" Value="LightGray" />
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#FE6584"/>
-                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Background" Value="#FE6584" />
+                                <Setter Property="Foreground" Value="White" />
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -222,29 +235,29 @@ mc:Ignorable="d"
                                 CornerRadius="12"
                                 Background="{TemplateBinding Background}">
                             <ContentPresenter VerticalAlignment="Center"
-                                              HorizontalAlignment="Center"/>
+                                              HorizontalAlignment="Center" />
                         </Border>
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Content="Загрузить" 
-                    Click="load_draftVersionMail_Click" 
-                    Name="ButtonLoadDraft" IsEnabled="False" 
-                    HorizontalAlignment="Left" 
-                    Margin="183.8,403,0,0" 
-                    VerticalAlignment="Top" 
-                    Width="114" Height="22" 
+            <Button Content="Загрузить"
+                    Click="load_draftVersionMail_Click"
+                    Name="ButtonLoadDraft" IsEnabled="False"
+                    HorizontalAlignment="Left"
+                    Margin="183.8,403,0,0"
+                    VerticalAlignment="Top"
+                    Width="114" Height="22"
                     Grid.Column="2"
                     FontFamily="Russo one">
                 <Button.Style>
                     <Style TargetType="Button">
-                        <Setter Property="Background" Value="#bf7c00"/>
-                        <Setter Property="Cursor" Value="Hand"/>
-                        <Setter Property="Foreground" Value="LightGray"/>
+                        <Setter Property="Background" Value="#bf7c00" />
+                        <Setter Property="Cursor" Value="Hand" />
+                        <Setter Property="Foreground" Value="LightGray" />
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#FE6584"/>
-                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Background" Value="#FE6584" />
+                                <Setter Property="Foreground" Value="White" />
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -255,30 +268,30 @@ mc:Ignorable="d"
                                 CornerRadius="12"
                                 Background="{TemplateBinding Background}">
                             <ContentPresenter VerticalAlignment="Center"
-                                              HorizontalAlignment="Center"/>
+                                              HorizontalAlignment="Center" />
                         </Border>
                     </ControlTemplate>
                 </Button.Template>
             </Button>
 
-            <Button Content="Загрузить" 
-                    Click="Add_file_Click" 
-                    HorizontalAlignment="Left" 
-                    Margin="10,353,0,0" 
-                    VerticalAlignment="Top" 
-                    Width="111" Height="23" 
-                    RenderTransformOrigin="4.856,0.954" 
+            <Button Content="Загрузить"
+                    Click="Add_file_Click"
+                    HorizontalAlignment="Left"
+                    Margin="10,353,0,0"
+                    VerticalAlignment="Top"
+                    Width="111" Height="23"
+                    RenderTransformOrigin="4.856,0.954"
                     Grid.ColumnSpan="3"
                     FontFamily="Russo one">
                 <Button.Style>
                     <Style TargetType="Button">
-                        <Setter Property="Background" Value="#bf7c00"/>
-                        <Setter Property="Cursor" Value="Hand"/>
-                        <Setter Property="Foreground" Value="LightGray"/>
+                        <Setter Property="Background" Value="#bf7c00" />
+                        <Setter Property="Cursor" Value="Hand" />
+                        <Setter Property="Foreground" Value="LightGray" />
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#FE6584"/>
-                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Background" Value="#FE6584" />
+                                <Setter Property="Foreground" Value="White" />
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -289,31 +302,31 @@ mc:Ignorable="d"
                                 CornerRadius="12"
                                 Background="{TemplateBinding Background}">
                             <ContentPresenter VerticalAlignment="Center"
-                                              HorizontalAlignment="Center"/>
+                                              HorizontalAlignment="Center" />
                         </Border>
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Content="Удалить" 
-                    Name="DeleteFileButton" 
-                    Click="Del_file_Click" 
-                    IsEnabled="False" 
-                    HorizontalAlignment="Left" 
-                    Margin="10,388,0,0" 
-                    VerticalAlignment="Top" 
-                    Width="111" Height="23" 
-                    RenderTransformOrigin="4.856,0.954" 
+            <Button Content="Удалить"
+                    Name="DeleteFileButton"
+                    Click="Del_file_Click"
+                    IsEnabled="False"
+                    HorizontalAlignment="Left"
+                    Margin="10,388,0,0"
+                    VerticalAlignment="Top"
+                    Width="111" Height="23"
+                    RenderTransformOrigin="4.856,0.954"
                     Grid.ColumnSpan="3"
                     FontFamily="Russo one">
                 <Button.Style>
                     <Style TargetType="Button">
-                        <Setter Property="Background" Value="#bf7c00"/>
-                        <Setter Property="Cursor" Value="Hand"/>
-                        <Setter Property="Foreground" Value="LightGray"/>
+                        <Setter Property="Background" Value="#bf7c00" />
+                        <Setter Property="Cursor" Value="Hand" />
+                        <Setter Property="Foreground" Value="LightGray" />
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#FE6584"/>
-                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Background" Value="#FE6584" />
+                                <Setter Property="Foreground" Value="White" />
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -324,31 +337,31 @@ mc:Ignorable="d"
                                 CornerRadius="12"
                                 Background="{TemplateBinding Background}">
                             <ContentPresenter VerticalAlignment="Center"
-                                              HorizontalAlignment="Center"/>
+                                              HorizontalAlignment="Center" />
                         </Border>
                     </ControlTemplate>
                 </Button.Template>
             </Button>
 
-            <Button Name="ButtonAdd_user" 
-                    Content="+" 
-                    Click="Add_user_to_Click" 
-                    IsEnabled="False" 
-                    HorizontalAlignment="Left" 
-                    Margin="637.8,38,0,0" 
+            <Button Name="ButtonAdd_user"
+                    Content="+"
+                    Click="Add_user_to_Click"
+                    IsEnabled="False"
+                    HorizontalAlignment="Left"
+                    Margin="637.8,38,0,0"
                     VerticalAlignment="Top"
-                    Width="30" Height="30" 
+                    Width="30" Height="30"
                     Grid.Column="2"
                     FontFamily="Russo one">
                 <Button.Style>
                     <Style TargetType="Button">
-                        <Setter Property="Background" Value="#bf7c00"/>
-                        <Setter Property="Cursor" Value="Hand"/>
-                        <Setter Property="Foreground" Value="LightGray"/>
+                        <Setter Property="Background" Value="#bf7c00" />
+                        <Setter Property="Cursor" Value="Hand" />
+                        <Setter Property="Foreground" Value="LightGray" />
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#FE6584"/>
-                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Background" Value="#FE6584" />
+                                <Setter Property="Foreground" Value="White" />
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -359,30 +372,30 @@ mc:Ignorable="d"
                                 CornerRadius="12"
                                 Background="{TemplateBinding Background}">
                             <ContentPresenter VerticalAlignment="Center"
-                                              HorizontalAlignment="Center"/>
+                                              HorizontalAlignment="Center" />
                         </Border>
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Name="DeleteButton" 
-                    Click="Delete_from_Click" 
-                    IsEnabled="False" 
-                    Content="Удалить" 
-                    HorizontalAlignment="Left" 
-                    Margin="701.8,402,0,0" 
-                    VerticalAlignment="Top" 
-                    Width="107" 
+            <Button Name="DeleteButton"
+                    Click="Delete_from_Click"
+                    IsEnabled="False"
+                    Content="Удалить"
+                    HorizontalAlignment="Left"
+                    Margin="701.8,402,0,0"
+                    VerticalAlignment="Top"
+                    Width="107"
                     Grid.Column="2"
                     FontFamily="Russo one">
                 <Button.Style>
                     <Style TargetType="Button">
-                        <Setter Property="Background" Value="#bf7c00"/>
-                        <Setter Property="Cursor" Value="Hand"/>
-                        <Setter Property="Foreground" Value="LightGray"/>
+                        <Setter Property="Background" Value="#bf7c00" />
+                        <Setter Property="Cursor" Value="Hand" />
+                        <Setter Property="Foreground" Value="LightGray" />
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#FE6584"/>
-                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Background" Value="#FE6584" />
+                                <Setter Property="Foreground" Value="White" />
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -393,30 +406,38 @@ mc:Ignorable="d"
                                 CornerRadius="12"
                                 Background="{TemplateBinding Background}">
                             <ContentPresenter VerticalAlignment="Center"
-                                              HorizontalAlignment="Center"/>
+                                              HorizontalAlignment="Center" />
                         </Border>
                     </ControlTemplate>
                 </Button.Template>
             </Button>
 
-            <Label Content="От кого: " HorizontalAlignment="Left" Margin="118.8,7,0,0" VerticalAlignment="Top" Foreground="White" Grid.Column="2" FontSize="18" FontFamily="Russo one"/>
-            <Label Content="Кому: " HorizontalAlignment="Left" Margin="140.8,33,0,0" VerticalAlignment="Top" Height="29" Foreground="White" Grid.Column="2" FontFamily="Russo one" FontSize="18"/>
-            <Label Content="Заголовок: " HorizontalAlignment="Left" Margin="89.8,60,0,0" VerticalAlignment="Top" Height="29" Foreground="White" Grid.Column="2" FontFamily="Russo One" FontSize="18"/>
-            <Label Name="errorLabelMain" Foreground="Red" HorizontalAlignment="Left" Margin="302.8,388,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.517,0.026" Width="255" Grid.Column="2" FontFamily="Russo one" Height="43" FontSize="12" />
+            <Label Content="От кого: " HorizontalAlignment="Left" Margin="118.8,7,0,0" VerticalAlignment="Top"
+                   Foreground="White" Grid.Column="2" FontSize="18" FontFamily="Russo one" />
+            <Label Content="Кому: " HorizontalAlignment="Left" Margin="140.8,33,0,0" VerticalAlignment="Top"
+                   Height="29" Foreground="White" Grid.Column="2" FontFamily="Russo one" FontSize="18" />
+            <Label Content="Заголовок: " HorizontalAlignment="Left" Margin="89.8,60,0,0" VerticalAlignment="Top"
+                   Height="29" Foreground="White" Grid.Column="2" FontFamily="Russo One" FontSize="18" />
+            <Label Name="errorLabelMain" Foreground="Red" HorizontalAlignment="Left" Margin="302.8,388,0,0"
+                   VerticalAlignment="Top" RenderTransformOrigin="0.517,0.026" Width="255" Grid.Column="2"
+                   FontFamily="Russo one" Height="43" FontSize="12" />
 
-            <ProgressBar Name="ProgressSend" HorizontalAlignment="Left" Visibility="Collapsed" Height="7" Margin="35,0,0,0" VerticalAlignment="Top" Width="695" Grid.Column="2"/>
+            <ProgressBar Name="ProgressSend" HorizontalAlignment="Left" Visibility="Collapsed" Height="7"
+                         Margin="35,0,0,0" VerticalAlignment="Top" Width="695" Grid.Column="2" />
         </Grid>
 
-        <Grid Name="LoginMenu" HorizontalAlignment="Left" Height="448" Margin="10,42,0,0" VerticalAlignment="Top" Width="345"  Visibility="Visible" IsEnabled="True">
-            <Button Click="Login_Click" Content="Войти" Margin="70,247,83,0" VerticalAlignment="Top" RenderTransformOrigin="-0.109,-0.24" Height="39" FontFamily="Russo one" FontSize="18">
+        <Grid Name="LoginMenu" HorizontalAlignment="Left" Height="448" Margin="10,42,0,0" VerticalAlignment="Top"
+              Width="345" Visibility="Visible" IsEnabled="True">
+            <Button Click="Login_Click" Content="Войти" Margin="70,247,83,0" VerticalAlignment="Top"
+                    RenderTransformOrigin="-0.109,-0.24" Height="39" FontFamily="Russo one" FontSize="18">
                 <Button.Style>
                     <Style TargetType="Button">
-                        <Setter Property="Background" Value="#FFA600"/>
-                        <Setter Property="Cursor" Value="Hand"/>
-                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="Background" Value="#FFA600" />
+                        <Setter Property="Cursor" Value="Hand" />
+                        <Setter Property="Foreground" Value="White" />
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#FE6584"/>
+                                <Setter Property="Background" Value="#FE6584" />
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -427,25 +448,31 @@ mc:Ignorable="d"
                                 CornerRadius="12"
                                 Background="{TemplateBinding Background}">
                             <ContentPresenter VerticalAlignment="Center"
-                                              HorizontalAlignment="Center"/>
+                                              HorizontalAlignment="Center" />
                         </Border>
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <TextBox Name="LoginEmail" HorizontalAlignment="Left" Height="22" Margin="96,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155"/>
-            <PasswordBox Name="LoginPassword" HorizontalAlignment="Left" Height="23" Margin="96,192,0,0" VerticalAlignment="Top" Width="155" RenderTransformOrigin="0.458,1.426"/>
+            <TextBox Name="LoginEmail" HorizontalAlignment="Left" Height="22" Margin="96,136,0,0" TextWrapping="Wrap"
+                     VerticalAlignment="Top" Width="155" />
+            <PasswordBox Name="LoginPassword" HorizontalAlignment="Left" Height="23" Margin="96,192,0,0"
+                         VerticalAlignment="Top" Width="155" RenderTransformOrigin="0.458,1.426" />
 
-            <Label Content="Вход в почту" Margin="96,52,107,0" VerticalAlignment="Top" Foreground="White" FontFamily="Russo one" HorizontalAlignment="Center" FontSize="19" Width="142"/>
-            <Label FontSize="16" Content="Email" HorizontalAlignment="Left" Margin="36,133,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Russo one"/>
-            <Label FontSize="16" Content="Password" HorizontalAlignment="Left" Margin="1,189,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Russo One"/>
-            <Label Name="errorLabelLogin" Foreground="Red" HorizontalAlignment="Left" Margin="60,220,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.517,0.026" Width="200" FontFamily="Russo One"/>
+            <Label Content="Вход в почту" Margin="96,52,107,0" VerticalAlignment="Top" Foreground="White"
+                   FontFamily="Russo one" HorizontalAlignment="Center" FontSize="19" Width="142" />
+            <Label FontSize="16" Content="Email" HorizontalAlignment="Left" Margin="36,133,0,0" VerticalAlignment="Top"
+                   Foreground="White" FontFamily="Russo one" />
+            <Label FontSize="16" Content="Password" HorizontalAlignment="Left" Margin="1,189,0,0"
+                   VerticalAlignment="Top" Foreground="White" FontFamily="Russo One" />
+            <Label Name="errorLabelLogin" Foreground="Red" HorizontalAlignment="Left" Margin="60,220,0,0"
+                   VerticalAlignment="Top" RenderTransformOrigin="0.517,0.026" Width="200" FontFamily="Russo One" />
         </Grid>
         <Grid Grid.Column="1"
               Grid.Row="0" Grid.RowSpan="2"
               Margin="160 -365, -610, 85"
               Panel.ZIndex="-1">
             <Grid.RenderTransform>
-                <RotateTransform Angle="50"/>
+                <RotateTransform Angle="50" />
             </Grid.RenderTransform>
 
             <StackPanel Orientation="Horizontal"
@@ -456,17 +483,17 @@ mc:Ignorable="d"
                             Height="35"
                             Background="#FFA600"
                             Margin="150,0,0,0"
-                            CornerRadius="20"/>
+                            CornerRadius="20" />
                     <Border Width="700"
                             Height="35"
                             Background="#FC6586"
                             Margin="0,15,0,0"
-                            CornerRadius="20"/>
+                            CornerRadius="20" />
                     <Border Width="700"
                             Height="35"
                             Background="#3DDDC2"
                             Margin="75,15,0,0"
-                            CornerRadius="20"/>
+                            CornerRadius="20" />
                 </StackPanel>
 
                 <StackPanel>
@@ -474,22 +501,24 @@ mc:Ignorable="d"
                             Height="35"
                             Background="#FFA600"
                             Margin="150,0,0,0"
-                            CornerRadius="20"/>
+                            CornerRadius="20" />
                     <Border Width="700"
                             Height="35"
                             Background="#FC6586"
                             Margin="0,15,0,0"
-                            CornerRadius="20"/>
+                            CornerRadius="20" />
                     <Border Width="700"
                             Height="35"
                             Background="#3DDDC2"
                             Margin="75,15,0,0"
-                            CornerRadius="20"/>
+                            CornerRadius="20" />
                 </StackPanel>
             </StackPanel>
         </Grid>
-        <Border Visibility="Visible" x:Name="brdReadme" Margin="281,88,426,24" Padding="5" BorderThickness="1" BorderBrush="Red" Background="AntiqueWhite" CornerRadius="10" Grid.ColumnSpan="2">
-            <TextBlock x:Name="tb_readme" Text="Инструкция" FontFamily="MatchTv" FontSize="18" TextWrapping="Wrap" LineHeight="16" TextAlignment="Left" Margin="4.4,0.4,3.4,-0.4"/>
+        <Border Visibility="Visible" x:Name="brdReadme" Margin="281,88,426,24" Padding="5" BorderThickness="1"
+                BorderBrush="Red" Background="AntiqueWhite" CornerRadius="10" Grid.ColumnSpan="2">
+            <TextBlock x:Name="tb_readme" Text="Инструкция" FontFamily="MatchTv" FontSize="18" TextWrapping="Wrap"
+                       LineHeight="16" TextAlignment="Left" Margin="4.4,0.4,3.4,-0.4" />
         </Border>
     </Grid>
 </Window>

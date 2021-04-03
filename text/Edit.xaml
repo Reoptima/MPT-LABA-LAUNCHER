@@ -16,88 +16,110 @@
     </Window.CommandBindings>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="380"/>
-            <RowDefinition/>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="380" />
+            <RowDefinition />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition />
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid Grid.Row="3">
             <TextBlock Text="Cовет: вы всегда можете не ████████, если ███ что-то не ███"
                        Foreground="White"
                        FontSize="22"
                        FontFamily="Russo one"
-                       TextWrapping="Wrap" LineHeight="25" Margin="10,0,-448,0"/>
+                       TextWrapping="Wrap" LineHeight="25" Margin="10,0,-448,0" />
         </Grid>
         <Grid Background="Red"
               Grid.ColumnSpan="2" Grid.Column="0"
               Grid.Row="1"
               Margin="0,5,0,0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="62*"/>
-                <ColumnDefinition Width="164*"/>
-                <ColumnDefinition Width="225*"/>
-                <ColumnDefinition Width="225*"/>
-                <ColumnDefinition Width="41*"/>
-                <ColumnDefinition Width="184*"/>
+                <ColumnDefinition Width="62*" />
+                <ColumnDefinition Width="164*" />
+                <ColumnDefinition Width="225*" />
+                <ColumnDefinition Width="225*" />
+                <ColumnDefinition Width="41*" />
+                <ColumnDefinition Width="184*" />
             </Grid.ColumnDefinitions>
             <DockPanel Visibility="Visible" Name="Izm" Grid.ColumnSpan="3" Margin="0,0,224.4,0">
                 <ToolBar DockPanel.Dock="Top" Margin="-15,0,-693,0" Height="63" Background="#0F0F2D" Cursor="Hand">
                     <Separator />
                     <ToggleButton Command="EditingCommands.ToggleBold" Name="btnBold">
-                        <Image Source="Images/text_bold.png" Width="30" Height="30" RenderOptions.BitmapScalingMode="HighQuality" ToolTip="Жирный"/>
+                        <Image Source="Images/text_bold.png" Width="30" Height="30"
+                               RenderOptions.BitmapScalingMode="HighQuality" ToolTip="Жирный" />
                     </ToggleButton>
                     <ToggleButton Command="EditingCommands.ToggleItalic" Name="btnItalic" ToolTip="Курсив">
-                        <Image Source="Images/text_italic.png" Width="30" Height="30" RenderOptions.BitmapScalingMode="HighQuality"/>
+                        <Image Source="Images/text_italic.png" Width="30" Height="30"
+                               RenderOptions.BitmapScalingMode="HighQuality" />
                     </ToggleButton>
                     <ToggleButton Command="EditingCommands.ToggleUnderline" Name="btnUnderline" ToolTip="Подчёркивание">
-                        <Image Source="Images/text_underline.png" Width="30" Height="30" RenderOptions.BitmapScalingMode="HighQuality"/>
+                        <Image Source="Images/text_underline.png" Width="30" Height="30"
+                               RenderOptions.BitmapScalingMode="HighQuality" />
                     </ToggleButton>
                     <Separator />
-                    <ComboBox Name="cmbFontFamily" Width="150" SelectionChanged="cmbFontFamily_SelectionChanged" Foreground="White" Background="#0F0F2D" ToolTip="Шрифт"/>
-                    <ComboBox Name="cmbFontSize" Width="50" IsEditable="True" TextBoxBase.TextChanged="cmbFontSize_TextChanged" Foreground="White" Background="#0F0F2D" ToolTip="Размер шрифта"/>
-                    <ComboBox Visibility="Collapsed" Name="cmbMargin" Width="50" IsEditable="True" TextBoxBase.TextChanged="cmbMargin_TextChanged" Foreground="White" Background="#0F0F2D"/>
+                    <ComboBox Name="cmbFontFamily" Width="150" SelectionChanged="cmbFontFamily_SelectionChanged"
+                              Foreground="White" Background="#0F0F2D" ToolTip="Шрифт" />
+                    <ComboBox Name="cmbFontSize" Width="50" IsEditable="True"
+                              TextBoxBase.TextChanged="cmbFontSize_TextChanged" Foreground="White" Background="#0F0F2D"
+                              ToolTip="Размер шрифта" />
+                    <ComboBox Visibility="Collapsed" Name="cmbMargin" Width="50" IsEditable="True"
+                              TextBoxBase.TextChanged="cmbMargin_TextChanged" Foreground="White" Background="#0F0F2D" />
                 </ToolBar>
             </DockPanel>
             <DockPanel Visibility="Hidden" Name="Prav" Grid.ColumnSpan="3" Grid.Column="0" Margin="0,0,224.4,0">
                 <ToolBar DockPanel.Dock="Top" Margin="-15,0,-693,0" Height="63" Background="#0F0F2D" Cursor="Hand">
                     <Separator />
                     <ToggleButton Command="ApplicationCommands.Undo" ToolTip="Отменить">
-                        <Image Source="Images/undo.png"  Width="30" Height="30" RenderOptions.BitmapScalingMode="HighQuality"/>
+                        <Image Source="Images/undo.png" Width="30" Height="30"
+                               RenderOptions.BitmapScalingMode="HighQuality" />
                     </ToggleButton>
                     <ToggleButton Command="ApplicationCommands.Redo" ToolTip="Вернуть">
-                        <Image Source="Images/Redo.png"  Width="30" Height="30" RenderOptions.BitmapScalingMode="HighQuality"/>
+                        <Image Source="Images/Redo.png" Width="30" Height="30"
+                               RenderOptions.BitmapScalingMode="HighQuality" />
                     </ToggleButton>
                     <ToggleButton Command="ApplicationCommands.Paste" ToolTip="Вставить">
-                        <Image Source="Images/Paste.png" Width="30" Height="30" RenderOptions.BitmapScalingMode="HighQuality"/>
+                        <Image Source="Images/Paste.png" Width="30" Height="30"
+                               RenderOptions.BitmapScalingMode="HighQuality" />
                     </ToggleButton>
                     <ToggleButton Command="ApplicationCommands.Copy" ToolTip="Копировать">
-                        <Image Source="Images/Copy.png" Width="30" Height="30" RenderOptions.BitmapScalingMode="HighQuality"/>
+                        <Image Source="Images/Copy.png" Width="30" Height="30"
+                               RenderOptions.BitmapScalingMode="HighQuality" />
                     </ToggleButton>
                     <ToggleButton Command="ApplicationCommands.Cut" ToolTip="Вырезать">
-                        <Image Source="Images/Cut.png" Width="30" Height="30" RenderOptions.BitmapScalingMode="HighQuality"/>
+                        <Image Source="Images/Cut.png" Width="30" Height="30"
+                               RenderOptions.BitmapScalingMode="HighQuality" />
                     </ToggleButton>
-                    <xctk:ColorPicker Name="ClrPcker_Background" Width="47" Margin="0,17,0,15" SelectedColorChanged="ClrPcker_Background_SelectedColorChanged" Background="Transparent" ToolTip="Цвет" RenderOptions.BitmapScalingMode="LowQuality"></xctk:ColorPicker>
+                    <xctk:ColorPicker Name="ClrPcker_Background" Width="47" Margin="0,17,0,15"
+                                      SelectedColorChanged="ClrPcker_Background_SelectedColorChanged"
+                                      Background="Transparent" ToolTip="Цвет"
+                                      RenderOptions.BitmapScalingMode="LowQuality" />
                     <ToggleButton Command="ApplicationCommands.SelectAll" ToolTip="Выделить всё">
-                        <Image Source="Images/selall.png" Width="30" Height="30" RenderOptions.BitmapScalingMode="HighQuality"/>
+                        <Image Source="Images/selall.png" Width="30" Height="30"
+                               RenderOptions.BitmapScalingMode="HighQuality" />
                     </ToggleButton>
-                    <ToggleButton x:Name="leftalig" Click="Leftalig_Click" Margin="130,0,0,0" ToolTip="Выровнять по левому краю">
-                        <Image Source="Images/leftalig.png" Width="30" Height="30" RenderOptions.BitmapScalingMode="HighQuality"/>
+                    <ToggleButton x:Name="leftalig" Click="Leftalig_Click" Margin="130,0,0,0"
+                                  ToolTip="Выровнять по левому краю">
+                        <Image Source="Images/leftalig.png" Width="30" Height="30"
+                               RenderOptions.BitmapScalingMode="HighQuality" />
                     </ToggleButton>
                     <ToggleButton x:Name="Centalig" Click="Centalig_Click" ToolTip="Выровнять по центру">
-                        <Image Source="Images/centalig.png" Width="30" Height="30" RenderOptions.BitmapScalingMode="HighQuality"/>
+                        <Image Source="Images/centalig.png" Width="30" Height="30"
+                               RenderOptions.BitmapScalingMode="HighQuality" />
                     </ToggleButton>
                     <ToggleButton x:Name="rightalig" Click="Rightalig_Click" ToolTip="Выровнять по правому краю">
-                        <Image Source="Images/rightalig.png" Width="30" Height="30" RenderOptions.BitmapScalingMode="HighQuality"/>
+                        <Image Source="Images/rightalig.png" Width="30" Height="30"
+                               RenderOptions.BitmapScalingMode="HighQuality" />
                     </ToggleButton>
-                    <ToggleButton x:Name="justtalig" Click="Justtalig_Click"  ToolTip="Выровнять по ширине краю">
-                        <Image Source="Images/justifalig.png" Width="30" Height="30" RenderOptions.BitmapScalingMode="HighQuality"/>
+                    <ToggleButton x:Name="justtalig" Click="Justtalig_Click" ToolTip="Выровнять по ширине краю">
+                        <Image Source="Images/justifalig.png" Width="30" Height="30"
+                               RenderOptions.BitmapScalingMode="HighQuality" />
                     </ToggleButton>
                     <ToggleButton x:Name="Print" ToolTip="Печать" Click="Print_Click" Margin="300,0,0,0">
-                        <Image Source="Images/Print.png" Width="30" Height="30" RenderOptions.BitmapScalingMode="HighQuality"/>
+                        <Image Source="Images/Print.png" Width="30" Height="30"
+                               RenderOptions.BitmapScalingMode="HighQuality" />
                     </ToggleButton>
                 </ToolBar>
             </DockPanel>
@@ -107,7 +129,7 @@
             <RichTextBox Name="rtbEditor" SelectionChanged="rtbEditor_SelectionChanged" Margin="0,0,0,0">
                 <RichTextBox.Resources>
                     <Style TargetType="{x:Type Paragraph}">
-                        <Setter Property="Margin" Value="{Binding MyMaxRowsOrCollumns}"  x:Name="rtbmargin"/>
+                        <Setter Property="Margin" Value="{Binding MyMaxRowsOrCollumns}" x:Name="rtbmargin" />
                     </Style>
                 </RichTextBox.Resources>
             </RichTextBox>
@@ -117,31 +139,31 @@
               MouseDown="Grid_MouseDown"
               Panel.ZIndex="2" Margin="0,0,0,55" Grid.Row="0" Grid.RowSpan="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <Menu
-                    FontSize="15"
-                    FontFamily="Russo one"
-                    Grid.Column="0"
-                    VerticalAlignment="Bottom"
-                    HorizontalContentAlignment="Center"
+                FontSize="15"
+                FontFamily="Russo one"
+                Grid.Column="0"
+                VerticalAlignment="Bottom"
+                HorizontalContentAlignment="Center"
                 BorderThickness="0"
                 BorderBrush="#ffa600" Margin="32,0,35,6" Width="62" Height="25">
                 <Menu.Style>
                     <Style TargetType="Menu">
-                        <Setter Property="Background" Value="#bf7c00"/>
-                        <Setter Property="Cursor" Value="Hand"/>
-                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                        <Setter Property="Background" Value="#bf7c00" />
+                        <Setter Property="Cursor" Value="Hand" />
+                        <Setter Property="HorizontalAlignment" Value="Center" />
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#FE6584"/>
-                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Background" Value="#FE6584" />
+                                <Setter Property="Foreground" Value="White" />
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -153,17 +175,21 @@
                                 Background="{TemplateBinding Background}"
                                 x:Name="Border">
                             <StackPanel ClipToBounds="True"
-                      Orientation="Horizontal"
-                      IsItemsHost="True" />
+                                        Orientation="Horizontal"
+                                        IsItemsHost="True" />
                         </Border>
                     </ControlTemplate>
                 </Menu.Template>
                 <MenuItem Header="Файл" Width="59" Height="23" Foreground="LightGray" FontSize="18">
-                    <MenuItem Header="Открыть" Background="#FFA600" Foreground="White" BorderThickness="0" Command="ApplicationCommands.Open"/>
-                    <MenuItem Header="Сохранить" Background="#FFA600" Foreground="White" BorderThickness="0" Command="ApplicationCommands.Save"/>
-                    <MenuItem Visibility="Collapsed" Header="Сохранить как" Background="#FFA600" Foreground="White" BorderThickness="0"/>
-                    <Separator Background="#FFA600" Margin="-48,0,0,0"/>
-                    <MenuItem Header="Выход" Background="#FFA600" Foreground="White" BorderThickness="0" Click="MenuExit_Click"/>
+                    <MenuItem Header="Открыть" Background="#FFA600" Foreground="White" BorderThickness="0"
+                              Command="ApplicationCommands.Open" />
+                    <MenuItem Header="Сохранить" Background="#FFA600" Foreground="White" BorderThickness="0"
+                              Command="ApplicationCommands.Save" />
+                    <MenuItem Visibility="Collapsed" Header="Сохранить как" Background="#FFA600" Foreground="White"
+                              BorderThickness="0" />
+                    <Separator Background="#FFA600" Margin="-48,0,0,0" />
+                    <MenuItem Header="Выход" Background="#FFA600" Foreground="White" BorderThickness="0"
+                              Click="MenuExit_Click" />
                 </MenuItem>
             </Menu>
 
@@ -178,12 +204,12 @@
                     Click="IzmButt_Click">
                 <Button.Style>
                     <Style TargetType="Button">
-                        <Setter Property="Background" Value="#FFA600"/>
-                        <Setter Property="Cursor" Value="Hand"/>
-                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="Background" Value="#FFA600" />
+                        <Setter Property="Cursor" Value="Hand" />
+                        <Setter Property="Foreground" Value="White" />
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#FE6584"/>
+                                <Setter Property="Background" Value="#FE6584" />
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -194,7 +220,7 @@
                                 CornerRadius="12"
                                 Background="{TemplateBinding Background}">
                             <ContentPresenter VerticalAlignment="Center"
-                                              HorizontalAlignment="Center"/>
+                                              HorizontalAlignment="Center" />
                         </Border>
                     </ControlTemplate>
                 </Button.Template>
@@ -210,12 +236,12 @@
                     Click="exit_Click">
                 <Button.Style>
                     <Style TargetType="Button">
-                        <Setter Property="Background" Value="#FE6584"/>
-                        <Setter Property="Cursor" Value="Hand"/>
-                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="Background" Value="#FE6584" />
+                        <Setter Property="Cursor" Value="Hand" />
+                        <Setter Property="Foreground" Value="White" />
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#FFDA4664"/>
+                                <Setter Property="Background" Value="#FFDA4664" />
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -226,7 +252,7 @@
                                 CornerRadius="12"
                                 Background="{TemplateBinding Background}">
                             <ContentPresenter VerticalAlignment="Center"
-                                              HorizontalAlignment="Center"/>
+                                              HorizontalAlignment="Center" />
                         </Border>
                     </ControlTemplate>
                 </Button.Template>
@@ -243,12 +269,12 @@
                     ToolTip="Свернуть приложение">
                 <Button.Style>
                     <Style TargetType="Button">
-                        <Setter Property="Background" Value="#3DDDC2"/>
-                        <Setter Property="Cursor" Value="Hand"/>
-                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="Background" Value="#3DDDC2" />
+                        <Setter Property="Cursor" Value="Hand" />
+                        <Setter Property="Foreground" Value="White" />
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#FF41B4A0"/>
+                                <Setter Property="Background" Value="#FF41B4A0" />
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -259,7 +285,7 @@
                                 CornerRadius="12"
                                 Background="{TemplateBinding Background}">
                             <ContentPresenter VerticalAlignment="Center"
-                                              HorizontalAlignment="Center"/>
+                                              HorizontalAlignment="Center" />
                         </Border>
                     </ControlTemplate>
                 </Button.Template>
@@ -275,13 +301,13 @@
                     Click="Prav_Click">
                 <Button.Style>
                     <Style TargetType="Button">
-                        <Setter Property="Background" Value="#bf7c00" x:Name="PravColor"/>
-                        <Setter Property="Cursor" Value="Hand"/>
-                        <Setter Property="Foreground" Value="LightGray" x:Name="PravFont"/>
+                        <Setter Property="Background" Value="#bf7c00" x:Name="PravColor" />
+                        <Setter Property="Cursor" Value="Hand" />
+                        <Setter Property="Foreground" Value="LightGray" x:Name="PravFont" />
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#FE6584"/>
-                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Background" Value="#FE6584" />
+                                <Setter Property="Foreground" Value="White" />
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -292,7 +318,7 @@
                                 CornerRadius="12"
                                 Background="{TemplateBinding Background}">
                             <ContentPresenter VerticalAlignment="Center"
-                                              HorizontalAlignment="Center"/>
+                                              HorizontalAlignment="Center" />
                         </Border>
                     </ControlTemplate>
                 </Button.Template>

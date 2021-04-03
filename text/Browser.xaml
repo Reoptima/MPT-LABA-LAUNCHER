@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="Browser" Height="450" Width="800">
     <Grid>
-        <TextBlock Text="В глубой разработке" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="70"/>
+        <TextBlock Text="В глубой разработке" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="70" />
     </Grid>
 </Window>

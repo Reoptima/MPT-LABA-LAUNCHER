@@ -39,14 +39,16 @@ namespace text
         public MailWindow()
         {
             InitializeComponent();
-            tb_readme.Text = "Инструкция\n\nДля начала работы с программой вам необходимо:\n1) В настройках безопастности дать доступ к вашей почте сторонним устройствам и приложениям\n2) Включить протоколы POP и IMAP чтобы письма отправлялись по DHCP\n3) Войти в аккаунт\n\n\n          PROFIT";
+            tb_readme.Text =
+                "Инструкция\n\nДля начала работы с программой вам необходимо:\n1) В настройках безопастности дать доступ к вашей почте сторонним устройствам и приложениям\n2) Включить протоколы POP и IMAP чтобы письма отправлялись по DHCP\n3) Войти в аккаунт\n\n\n          PROFIT";
             cmbFontFamily.ItemsSource = Fonts.SystemFontFamilies.OrderBy(f => f.Source);
-            cmbFontSize.ItemsSource = new List<double>() { 8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 24, 26, 28, 36, 48, 72 };
-            alignment.ItemsSource = new List<String>() { "Лево", "Центр", "Право", "Ширина" };
+            cmbFontSize.ItemsSource = new List<double>() {8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 24, 26, 28, 36, 48, 72};
+            alignment.ItemsSource = new List<String>() {"Лево", "Центр", "Право", "Ширина"};
             if (Directory.Exists(path_TempDirectory))
             {
                 Directory.Delete(path_TempDirectory, true);
             }
+
             if (debug)
             {
                 coreForm.Width = 900;
@@ -73,6 +75,7 @@ namespace text
                 showErrorLogin("Неверный формат email");
                 return;
             }
+
             MailAddress from = new MailAddress(LoginEmail.Text, "Tom");
             MailAddress to = new MailAddress(LoginEmail.Text);
             MailMessage m = new MailMessage(from, to);
@@ -99,8 +102,8 @@ namespace text
             {
                 showErrorLogin("Неверный email или пароль");
             }
-
         }
+
         private void Grid_MouseDown(Object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
@@ -108,13 +111,16 @@ namespace text
                 DragMove();
             }
         }
+
         private void exit_Click(object sender, RoutedEventArgs e) // Закрыть программу
         {
             Close();
             Environment.Exit(0);
         }
 
-        private void Collapse_Click(object sender, RoutedEventArgs e) => WindowState = WindowState.Minimized; // Свернуть окошко
+        private void Collapse_Click(object sender, RoutedEventArgs e) =>
+            WindowState = WindowState.Minimized; // Свернуть окошко
+
         private void MenuExit_Click(object sender, RoutedEventArgs e) // Вернуться на первое окно
         {
             MainWindow mani = new MainWindow();
@@ -142,14 +148,19 @@ namespace text
             switch (alignment.SelectedValue)
             {
                 case "По левой":
-                    Alignment = TextAlignment.Left; break;
+                    Alignment = TextAlignment.Left;
+                    break;
                 case "По центру":
-                    Alignment = TextAlignment.Center; break;
+                    Alignment = TextAlignment.Center;
+                    break;
                 case "По правой":
-                    Alignment = TextAlignment.Right; break;
+                    Alignment = TextAlignment.Right;
+                    break;
                 case "По ширине":
-                    Alignment = TextAlignment.Justify; break;
+                    Alignment = TextAlignment.Justify;
+                    break;
             }
+
             rtbEditor.Selection.ApplyPropertyValue(Paragraph.TextAlignmentProperty, Alignment);
         }
 
@@ -166,7 +177,7 @@ namespace text
                 temp = rtbEditor.Selection.GetPropertyValue(Inline.FontSizeProperty);
                 cmbFontSize.Text = temp.ToString() != "{DependencyProperty.UnsetValue}" ? temp.ToString() : "";
                 temp = rtbEditor.Selection.GetPropertyValue(Paragraph.TextAlignmentProperty);
-                switch ((TextAlignment)temp)
+                switch ((TextAlignment) temp)
                 {
                     case TextAlignment.Left:
                         alignment.SelectedIndex = 0;
@@ -190,6 +201,7 @@ namespace text
 
         // ----Отправка письма---- //
         string titl;
+
         private void Send_Click(object sender, RoutedEventArgs e)
         {
             SendButton.IsEnabled = false;
@@ -201,7 +213,10 @@ namespace text
             range.Save(fileStream, DataFormats.Rtf);
             titl = Titleline.Text;
             fileStream.Close();
-            if (isValidEmail(whomMail.Text)) { whomMailList.Items.Add(whomMail.Text); }
+            if (isValidEmail(whomMail.Text))
+            {
+                whomMailList.Items.Add(whomMail.Text);
+            }
 
             BackgroundWorker worker = new BackgroundWorker();
             worker.WorkerReportsProgress = true;
@@ -210,6 +225,7 @@ namespace text
             worker.RunWorkerCompleted += worker_RunWorkerCompleted;
             worker.RunWorkerAsync();
         }
+
         void worker_DoWork(object sender, DoWorkEventArgs e)
         {
             bool send = false;
@@ -220,16 +236,14 @@ namespace text
             int n = 1;
             foreach (var vari in whomMailList.Items)
             {
-                int progressPercentage = Convert.ToInt32(((double)n++ / whomMailList.Items.Count) * 100);
+                int progressPercentage = Convert.ToInt32(((double) n++ / whomMailList.Items.Count) * 100);
                 (sender as BackgroundWorker).ReportProgress(progressPercentage);
-                send_mes(titl, text, filePathList, (string)vari);
+                send_mes(titl, text, filePathList, (string) vari);
                 send = true;
                 System.Threading.Thread.Sleep(1000);
-
             }
 
             e.Result = send;
-
         }
 
         void worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -239,15 +253,16 @@ namespace text
 
         void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            if ((bool)e.Result)
+            if ((bool) e.Result)
             {
                 foreach (var vari in whomMailList.Items)
                 {
-                    if (!IsEmptyListView(whomMailListLast, (string)vari))
+                    if (!IsEmptyListView(whomMailListLast, (string) vari))
                     {
-                        whomMailListLast.Items.Add((string)vari);
+                        whomMailListLast.Items.Add((string) vari);
                     }
                 }
+
                 whomMailList.Items.Clear();
                 rtbEditor.Document.Blocks.Clear();
                 fileList.Items.Clear();
@@ -257,6 +272,7 @@ namespace text
             {
                 showErrorMain("А кому писать то?");
             }
+
             ProgressSend.Visibility = Visibility.Hidden;
             SendButton.IsEnabled = true;
         }
@@ -290,6 +306,7 @@ namespace text
                 ButtonAdd_user.IsEnabled = false;
                 return;
             }
+
             whomMailList.Items.Add(whomMail.Text);
             whomMail.Text = "";
             showErrorMain("");
@@ -320,10 +337,10 @@ namespace text
         private void FileDrop(object sender, DragEventArgs e)
         {
             showErrorMain("");
-            int time = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+            int time = (Int32) (DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
             Directory.CreateDirectory(path_FilesDirectory);
             if (e.Data != null)
-                foreach (var vari in (string[])e.Data.GetData(DataFormats.FileDrop))
+                foreach (var vari in (string[]) e.Data.GetData(DataFormats.FileDrop))
                 {
                     add_file(vari, time);
                 }
@@ -335,13 +352,13 @@ namespace text
             OpenFileDialog dlg = new OpenFileDialog();
             if (dlg.ShowDialog() == true)
             {
-                add_file(dlg.FileName, (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds);
+                add_file(dlg.FileName, (Int32) (DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds);
             }
         }
 
         private void Del_file_Click(object sender, RoutedEventArgs e)
         {
-            filePathList.Remove(((Label)fileList.SelectedItem).Uid);
+            filePathList.Remove(((Label) fileList.SelectedItem).Uid);
             fileList.Items.Remove(fileList.SelectedItem);
             DeleteFileButton.IsEnabled = false;
         }
@@ -356,6 +373,7 @@ namespace text
             {
                 m.Attachments.Add(new Attachment(vari));
             }
+
             smtp.Credentials = new NetworkCredential(userMail, userPassword);
             smtp.EnableSsl = true;
             smtp.Send(m);
@@ -369,13 +387,14 @@ namespace text
                 showErrorMain("файл превышает 2м");
                 return;
             }
+
             Directory.CreateDirectory(path_FilesDirectory + "\\" + time);
 
             string fileName = path.Split('\\').Last();
             string filePath = path_FilesDirectory + "\\" + time + "\\" + path.Split('\\').Last();
             File.Copy(path, filePath);
             filePathList.Add(filePath);
-            fileList.Items.Add(new Label() { Content = fileName, Uid = filePath });
+            fileList.Items.Add(new Label() {Content = fileName, Uid = filePath});
         }
 
         bool isValidEmail(string email)
@@ -401,8 +420,9 @@ namespace text
             draftVersionMail.whomMailList = new List<string>();
             foreach (var vari in whomMailList.Items)
             {
-                draftVersionMail.whomMailList.Add((string)vari);
+                draftVersionMail.whomMailList.Add((string) vari);
             }
+
             Directory.CreateDirectory(path_TempDirectory);
             FileStream fileStream = new FileStream(path_DraftVersion_RtfFile, FileMode.Create);
             TextRange range = new TextRange(rtbEditor.Document.ContentStart, rtbEditor.Document.ContentEnd);
@@ -420,8 +440,9 @@ namespace text
             whomMailList.Items.Clear();
             foreach (var path in filePathList)
             {
-                fileList.Items.Add(new Label() { Content = path.Split('\\').Last(), Uid = path });
+                fileList.Items.Add(new Label() {Content = path.Split('\\').Last(), Uid = path});
             }
+
             foreach (var vari in draftVersionMail.whomMailList)
             {
                 whomMailList.Items.Add(vari);
@@ -469,7 +490,6 @@ namespace text
             }
 
             return false;
-
         }
     }
 }
